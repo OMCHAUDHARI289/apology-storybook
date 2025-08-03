@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgive Me?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+      background-size: cover;
+      background-position: center center;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .paper {
+      position: absolute;
+      background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+      background-size: 500px;
+      padding: 30px 80px;
+      min-width: 350px;
+      min-height: 300px;
+      transform: rotateZ(-5deg);
+      box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.4);
+      display: none;
+      text-align: center;
+      color: #002;
+      font-size: 40px;
+    }
+
+    .paper img {
+      max-width: 200px;
+      margin-top: 10px;
+    }
+
+    .paper.active {
+      display: block;
+      animation: rotateIn 0.6s ease;
+    }
+
+    @keyframes rotateIn {
+      from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: rotate(-5deg) scale(1);
+      }
+    }
+
+    button {
+      margin: 10px 10px 0 10px;
+      font-size: 20px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff9aa2;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .emoji {
+      font-size: 40px;
+    }
+  </style>
+  <style>
+    #toast {
+      visibility: hidden;
+      min-width: 300px;
+      background-image: url('https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1');
+      background-size: 500px;
+      color: #002;
+      text-align: center;
+      border-radius: 16px;
+      padding: 18px 24px;
+      position: fixed;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+      z-index: 9999;
+      font-size: 40px;
+      font-weight: normal;
+      box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.2);
+      font-family: 'Dancing Script', cursive;
+      animation: fadein 0.5s, fadeout 0.5s 5.5s;
+      letter-spacing: 1px;
+    }
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 40px; opacity: 1;}
+    }
+    @keyframes fadeout {
+      from {bottom: 40px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <div id="toast">lagech forgive purn trr bagh <img src="https://em-content.zobj.net/source/apple/419/face-with-tears-of-joy_1f602.png" alt="Tears of Joy" style="width:36px;vertical-align:middle;"></div>
+
+  <div class="paper active">
+    can you forgive me please <img src="https://em-content.zobj.net/source/apple/419/beaming-face-with-smiling-eyes_1f601.png" alt="Beaming Face" style="width:40px;vertical-align:middle;"> I just made a small mistake.
+    <br><br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    You're my friend na… so plzz forgive me?
+    <br><img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/second_zw5gin.png" alt="Friend Image" style="max-width:200px;margin-top:10px;">
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Okay okay… I’ll give you Sunflower thikee!
+    <br><img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/third_ev9saq.png" alt="Sunflower Image" style="max-width:200px;margin-top:10px;">
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Fine fine… KitKat also!
+    <br><img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/fourth_zslojh.png" alt="KitKat Image" style="max-width:200px;margin-top:10px;">
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Tu hasli na? <img src="https://em-content.zobj.net/source/apple/419/face-with-peeking-eye_1fae3.png" alt="Peeking Eye" style="width:40px;vertical-align:middle;"> Mhnje thoda raag gela...
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Next time mi nahi irritate karnaar yaar... (maybe thoda sa <img src="https://em-content.zobj.net/source/apple/419/face-with-tears-of-joy_1f602.png" alt="Tears of Joy" style="width:40px;vertical-align:middle;">)
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me  <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    are bass Sunflower la pan jealousy hoil tuzi smile baghun <img src="https://em-content.zobj.net/source/apple/419/face-with-tears-of-joy_1f602.png" alt="Tears of Joy" style="width:40px;vertical-align:middle;"> <img src="https://em-content.zobj.net/source/apple/419/flushed-face_1f633.png" alt="Flushed Face" style="width:40px;vertical-align:middle;"> 
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No <img src="https://em-content.zobj.net/source/apple/419/unamused-face_1f612.png" alt="Unamused Face" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Vaaaiisshhnnaaviiiiiiiii plz<img src="https://em-content.zobj.net/source/apple/419/loudly-crying-face_1f62d.png" alt="Loudly Crying Face" style="width:40px;vertical-align:middle;"> <img src="https://em-content.zobj.net/source/apple/419/loudly-crying-face_1f62d.png" alt="Loudly Crying Face" style="width:40px;vertical-align:middle;">
+    <img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/eight_zvlyjc.png" alt="Plz Image" style="display:block;margin:10px auto;max-width:200px;">
+    <br>
+      <button onclick="showPopupAndNext()">Forgive Me  <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+    <button onclick="nextPage()">No </button>
+    <br>
+  </div>
+
+  <div class="paper">
+    aata kravach lagal evdhch ahe <img src="https://em-content.zobj.net/source/apple/419/beaming-face-with-smiling-eyes_1f601.png" alt="Beaming Face" style="width:40px;vertical-align:middle;"> 
+    <img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/ninth_lamqzu.png" alt="Plz Image" style="display:block;margin:10px auto;max-width:200px;">
+    <br><div class="emoji"></div>
+    <br>
+      <button onclick="nextPage()">Forgive Me <img src="https://em-content.zobj.net/source/apple/419/sparkling-heart_1f496.png" alt="Sparkling Heart" style="width:28px;vertical-align:middle;"></button>
+  </div>
+
+  <div class="paper">
+    Thank you so much! 😊<br>
+    You are the best! 💖<br>
+    <img src="https://res.cloudinary.com/dsitd74qn/image/upload/v1754252986/tenth_f2qxnh.png" alt="Thank You Image" style="display:block;margin:10px auto;max-width:200px;">
+    <br>
+    <button onclick="alert('You made my day!')">Yay! 🎉</button>
+  </div>
+
+  <script>
+    function showToast() {
+      var toast = document.getElementById('toast');
+      toast.style.visibility = 'visible';
+      setTimeout(function(){ toast.style.visibility = 'hidden'; }, 8000);
+    }
+    let current = 0;
+    function nextPage() {
+      const papers = document.querySelectorAll('.paper');
+      if (current < papers.length - 1) {
+        papers[current].classList.remove('active');
+        current++;
+        papers[current].classList.add('active');
+      }
+    }
+
+    function showPopupAndNext() {
+      showToast();
+    }
+  </script>
+
+</body>
+</html>
